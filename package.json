@@ -1,0 +1,40 @@
+{
+  "name": "recipe-planner-app",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:unit": "vitest --project unit",
+    "test:nuxt": "vitest --project nuxt"
+  },
+  "dependencies": {
+    "@nuxt/devtools": "3.2.1",
+    "@nuxt/eslint": "1.15.2",
+    "@nuxt/hints": "1.0.0-alpha.8",
+    "@nuxt/icon": "2.2.1",
+    "@nuxt/test-utils": "4.0.0",
+    "@nuxt/ui": "4.5.0",
+    "@nuxtjs/color-mode": "4.0.0",
+    "@pinia/nuxt": "0.11.3",
+    "nuxt": "^4.3.1",
+    "shadcn-nuxt": "2.4.3",
+    "tailwindcss": "^4.2.1",
+    "vue": "^3.5.28",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "@types/node": "^25.3.0",
+    "@vue/test-utils": "^2.4.6",
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18"
+  }
+}
