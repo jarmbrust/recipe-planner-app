@@ -4,8 +4,6 @@
 ## Purpose
 This is a grocery planner application built with Nuxt, PostgreSQL, and Tailwind CSS.
 
-I am also using Bun, to play around with it.
-
 The intent in creating this application is to assist both my wife and I in planning our grocery shopping by having a centralized place to keep track of what we need to buy from week to week.
 
 ## Features
