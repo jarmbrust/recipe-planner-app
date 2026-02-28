@@ -16,8 +16,8 @@ const forwardedProps = useForwardProps(delegatedProps)
   <NavigationMenuIndicator
     data-slot="navigation-menu-indicator"
     v-bind="forwardedProps"
-    :class="cn('tw-:data-[state=visible]:animate-in tw-:data-[state=hidden]:animate-out tw-:data-[state=hidden]:fade-out tw-:data-[state=visible]:fade-in tw-:top-full tw-:z-[1] tw-:flex tw-:h-1.5 tw-:items-end tw-:justify-center tw-:overflow-hidden', props.class)"
+    :class="cn('data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden', props.class)"
   >
-    <div class="tw-:bg-border tw-:relative tw-:top-[60%] tw-:h-2 tw-:w-2 tw-:rotate-45 tw-:rounded-tl-sm tw-:shadow-md" />
+    <div class="bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" />
   </NavigationMenuIndicator>
 </template>
