@@ -13,12 +13,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@pinia/nuxt",
     "@nuxt/fonts",
-    "shadcn-nuxt",
   ],
-  shadcn: {
-    prefix: "",
-    componentDir: "./app/components/ui",
-  },
   css: ["~/assets/css/main.css"],
   ui: {
     theme: {
@@ -33,7 +28,4 @@ export default defineNuxtConfig({
       ],
     },
   },
-  // vite: {
-  //   // plugins: [tailwindcss()],
-  // },
 });
