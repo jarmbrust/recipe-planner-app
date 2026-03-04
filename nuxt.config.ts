@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxt/ui', '@vueuse/nuxt', '@nuxt/image'],
 
   devtools: {
-    enabled: true
+    enabled: true,
   },
   app: {
     head: {
@@ -11,7 +11,10 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en',
       },
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      noscript: [
+        { textContent: 'JavaScript is required' },
+      ],
     },
   },
 
@@ -19,14 +22,14 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/api/**': {
-      cors: true
+      cors: true,
     },
   },
   compatibilityDate: '2026-03-03',
 
   eslint: {
     config: {
-      stylistic: true
+      stylistic: true,
     },
-  }
-});
+  },
+})

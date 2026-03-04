@@ -10,7 +10,7 @@ const profileSchema = z.object({
   username: z.string().min(2, 'Too short'),
   avatar: z.string().optional(),
   bio: z.string().optional(),
-});
+})
 
 type ProfileSchema = z.output<typeof profileSchema>
 
@@ -20,14 +20,14 @@ const profile = reactive<Partial<ProfileSchema>>({
   username: 'benjamincanac',
   avatar: undefined,
   bio: undefined,
-});
+})
 const toast = useToast()
 async function onSubmit(event: FormSubmitEvent<ProfileSchema>) {
   toast.add({
     title: 'Success',
     description: 'Your settings have been updated.',
     icon: 'i-lucide-check',
-    color: 'success'
+    color: 'success',
   })
   console.log(event.data)
 }

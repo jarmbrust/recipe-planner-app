@@ -1,7 +1,6 @@
 import type { AvatarProps } from '@nuxt/ui'
 
-export type UserStatus = 'subscribed' | 'unsubscribed' | 'bounced'
-export type SaleStatus = 'paid' | 'failed' | 'refunded'
+export type UserStatus = 'verified' | 'unverified' | 'deleted'
 
 export interface User {
   id: number

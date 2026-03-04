@@ -14,7 +14,7 @@ const links = [
       to: '/',
       onSelect: () => {
         open.value = false
-      }
+      },
     },
     {
       label: 'Inbox',
@@ -23,7 +23,7 @@ const links = [
       badge: '4',
       onSelect: () => {
         open.value = false
-      }
+      },
     },
     {
       label: 'Customers',
@@ -31,7 +31,7 @@ const links = [
       to: '/customers',
       onSelect: () => {
         open.value = false
-      }
+      },
     },
     {
       label: 'Settings',
@@ -46,46 +46,46 @@ const links = [
           exact: true,
           onSelect: () => {
             open.value = false
-          }
+          },
         },
         {
           label: 'Members',
           to: '/settings/members',
           onSelect: () => {
             open.value = false
-          }
+          },
         },
         {
           label: 'Notifications',
           to: '/settings/notifications',
           onSelect: () => {
             open.value = false
-          }
+          },
         },
         {
           label: 'Security',
           to: '/settings/security',
           onSelect: () => {
             open.value = false
-          }
-        }
-      ]
-    }
+          },
+        },
+      ],
+    },
   ],
   [
     {
       label: 'Feedback',
       icon: 'i-lucide-message-circle',
       to: 'https://duckduckgo.com', // TODO: make a feedback page
-      target: '_blank'
+      target: '_blank',
     },
     {
       label: 'Help & Support',
       icon: 'i-lucide-info',
       to: 'https://duckduckgo.com', // TODO: make a help page
-      target: '_blank'
-    }
-  ]
+      target: '_blank',
+    },
+  ],
 ] satisfies NavigationMenuItem[][]
 
 const groups = computed(() => [
@@ -103,10 +103,10 @@ const groups = computed(() => [
         label: 'View page source',
         icon: 'i-simple-icons-github',
         to: `https://github.com/nuxt-ui-templates/dashboard/blob/main/app/pages${route.path === '/' ? '/index' : route.path}.vue`,
-        target: '_blank'
-      }
-    ]
-  }
+        target: '_blank',
+      },
+    ],
+  },
 ])
 
 onMounted(async () => {
@@ -127,14 +127,14 @@ onMounted(async () => {
         variant: 'outline',
         onClick: () => {
           cookie.value = 'accepted'
-        }
+        },
       },
       {
         label: 'Opt out',
         color: 'neutral',
-        variant: 'ghost'
-      }
-    ]
+        variant: 'ghost',
+      },
+    ],
   })
 })
 </script>

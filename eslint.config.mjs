@@ -8,6 +8,6 @@ export default withNuxt({
     // Add stylistic rules here
     'comma-dangle': ['warn', 'always-multiline'],
     'brace-style': ['error', '1tbs'],
-    'quotes': ['warn', 'single']
-  }
+    'quotes': ['warn', 'single'],
+  },
 })

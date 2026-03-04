@@ -10,9 +10,9 @@ const teams = ref([
     label: 'Lacey & James',
     avatar: {
       src: 'https://github.com/nuxt.png',
-      alt: 'Nuxt'
-    }
-  }
+      alt: 'Nuxt',
+    },
+  },
   // {
   //   label: "NuxtHub",
   //   avatar: {
@@ -36,18 +36,18 @@ const items = computed<DropdownMenuItem[][]>(() => {
       ...team,
       onSelect() {
         selectedTeam.value = team
-      }
+      },
     })),
     [
       {
         label: 'Create team',
-        icon: 'i-lucide-circle-plus'
+        icon: 'i-lucide-circle-plus',
       },
       {
         label: 'Manage teams',
-        icon: 'i-lucide-cog'
-      }
-    ]
+        icon: 'i-lucide-cog',
+      },
+    ],
   ]
 })
 </script>
@@ -57,14 +57,14 @@ const items = computed<DropdownMenuItem[][]>(() => {
     :items="items"
     :content="{ align: 'center', collisionPadding: 12 }"
     :ui="{
-      content: collapsed ? 'w-40' : 'w-(--reka-dropdown-menu-trigger-width)'
+      content: collapsed ? 'w-40' : 'w-(--reka-dropdown-menu-trigger-width)',
     }"
   >
     <UButton
       v-bind="{
         ...selectedTeam,
         label: collapsed ? undefined : selectedTeam?.label,
-        trailingIcon: collapsed ? undefined : 'i-lucide-chevrons-up-down'
+        trailingIcon: collapsed ? undefined : 'i-lucide-chevrons-up-down',
       }"
       color="neutral"
       variant="ghost"
@@ -73,7 +73,7 @@ const items = computed<DropdownMenuItem[][]>(() => {
       class="data-[state=open]:bg-elevated"
       :class="[!collapsed && 'py-2']"
       :ui="{
-        trailingIcon: 'text-dimmed'
+        trailingIcon: 'text-dimmed',
       }"
     />
   </UDropdownMenu>

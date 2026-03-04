@@ -3,7 +3,7 @@ import type { Member } from '~/types'
 
 const { data: members } = await useFetch<Member[]>('/api/members', {
   default: () => [],
-});
+})
 
 const q = ref('')
 
@@ -34,7 +34,7 @@ const filteredMembers = computed(() => {
       :ui="{
         container: 'p-0 sm:p-0 gap-y-0',
         wrapper: 'items-stretch',
-        header: 'p-4 mb-0 border-b border-default'
+        header: 'p-4 mb-0 border-b border-default',
       }"
     >
       <template #header>
