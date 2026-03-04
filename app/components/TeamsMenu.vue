@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import type { DropdownMenuItem } from "@nuxt/ui";
+import type { DropdownMenuItem } from '@nuxt/ui'
 
 defineProps<{
-  collapsed?: boolean;
-}>();
+  collapsed?: boolean
+}>()
 
 const teams = ref([
   {
-    label: "Lacey & James",
+    label: 'Lacey & James',
     avatar: {
-      src: "https://github.com/nuxt.png",
-      alt: "Nuxt",
-    },
-  },
+      src: 'https://github.com/nuxt.png',
+      alt: 'Nuxt'
+    }
+  }
   // {
   //   label: "NuxtHub",
   //   avatar: {
@@ -27,29 +27,29 @@ const teams = ref([
   //     alt: "NuxtLabs",
   //   },
   // },
-]);
-const selectedTeam = ref(teams.value[0]);
+])
+const selectedTeam = ref(teams.value[0])
 
 const items = computed<DropdownMenuItem[][]>(() => {
   return [
-    teams.value.map((team) => ({
+    teams.value.map(team => ({
       ...team,
       onSelect() {
-        selectedTeam.value = team;
-      },
+        selectedTeam.value = team
+      }
     })),
     [
       {
-        label: "Create team",
-        icon: "i-lucide-circle-plus",
+        label: 'Create team',
+        icon: 'i-lucide-circle-plus'
       },
       {
-        label: "Manage teams",
-        icon: "i-lucide-cog",
-      },
-    ],
-  ];
-});
+        label: 'Manage teams',
+        icon: 'i-lucide-cog'
+      }
+    ]
+  ]
+})
 </script>
 
 <template>
@@ -57,14 +57,14 @@ const items = computed<DropdownMenuItem[][]>(() => {
     :items="items"
     :content="{ align: 'center', collisionPadding: 12 }"
     :ui="{
-      content: collapsed ? 'w-40' : 'w-(--reka-dropdown-menu-trigger-width)',
+      content: collapsed ? 'w-40' : 'w-(--reka-dropdown-menu-trigger-width)'
     }"
   >
     <UButton
       v-bind="{
         ...selectedTeam,
         label: collapsed ? undefined : selectedTeam?.label,
-        trailingIcon: collapsed ? undefined : 'i-lucide-chevrons-up-down',
+        trailingIcon: collapsed ? undefined : 'i-lucide-chevrons-up-down'
       }"
       color="neutral"
       variant="ghost"
@@ -73,7 +73,7 @@ const items = computed<DropdownMenuItem[][]>(() => {
       class="data-[state=open]:bg-elevated"
       :class="[!collapsed && 'py-2']"
       :ui="{
-        trailingIcon: 'text-dimmed',
+        trailingIcon: 'text-dimmed'
       }"
     />
   </UDropdownMenu>

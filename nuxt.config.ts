@@ -1,28 +1,32 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/eslint", "@nuxt/ui", "@vueuse/nuxt", "@nuxt/image"],
+  modules: ['@nuxt/eslint', '@nuxt/ui', '@vueuse/nuxt', '@nuxt/image'],
 
   devtools: {
-    enabled: true,
+    enabled: true
   },
-
-  css: ["~/assets/css/main.css"],
-
-  routeRules: {
-    "/api/**": {
-      cors: true,
+  app: {
+    head: {
+      title: 'Recipe Planner',
+      htmlAttrs: {
+        lang: 'en',
+      },
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
     },
   },
 
-  compatibilityDate: "2026-03-03",
+  css: ['~/assets/css/main.css'],
+
+  routeRules: {
+    '/api/**': {
+      cors: true
+    },
+  },
+  compatibilityDate: '2026-03-03',
 
   eslint: {
     config: {
-      stylistic: {
-        commaDangle: "never",
-        braceStyle: "1tbs",
-        quotes: "single",
-      },
+      stylistic: true
     },
-  },
+  }
 });
