@@ -1,26 +1,69 @@
 <script setup lang="ts">
-const appConfig = useAppConfig();
+import { sub } from 'date-fns'
+import type { DropdownMenuItem } from '@nuxt/ui'
+import type { Period, Range } from '~/types'
 
-console.log(appConfig.theme);
+const { isNotificationsSlideoverOpen } = useDashboard()
+
+const items = [[{
+  label: 'New mail',
+  icon: 'i-lucide-send',
+  to: '/inbox'
+}, {
+  label: 'New customer',
+  icon: 'i-lucide-user-plus',
+  to: '/customers'
+}]] satisfies DropdownMenuItem[][]
+
+const range = shallowRef<Range>({
+  start: sub(new Date(), { days: 14 }),
+  end: new Date()
+})
+const period = ref<Period>('daily')
 </script>
 
 <template>
-  <h1>Index page</h1>
-  <template>
-    <div>
-      <span class="text-primary">Primary</span>
-      <span class="text-secondary">Secondary</span>
-      <span class="text-success">Success</span>
-      <span class="text-info">Info</span>
-      <span class="text-warning">Warning</span>
-      <span class="text-error">Error</span>
-    </div>
-    <div>
-      <div class="bg-default">Default</div>
-      <div class="bg-muted">Muted</div>
-      <div class="bg-elevated">Elevated</div>
-      <div class="bg-accented">Accented</div>
-      <div class="bg-inverted text-inverted">Inverted</div>
-    </div>
-  </template>
+  <UDashboardPanel id="home">
+    <template #header>
+      <UDashboardNavbar title="Home" :ui="{ right: 'gap-3' }">
+        <template #leading>
+          <UDashboardSidebarCollapse />
+        </template>
+
+        <template #right>
+          <UTooltip text="Notifications" :shortcuts="['N']">
+            <UButton
+              color="neutral"
+              variant="ghost"
+              square
+              @click="isNotificationsSlideoverOpen = true"
+            >
+              <UChip color="error" inset>
+                <UIcon name="i-lucide-bell" class="size-5 shrink-0" />
+              </UChip>
+            </UButton>
+          </UTooltip>
+
+          <UDropdownMenu :items="items">
+            <UButton icon="i-lucide-plus" size="md" class="rounded-full" />
+          </UDropdownMenu>
+        </template>
+      </UDashboardNavbar>
+
+      <UDashboardToolbar>
+        <template #left>
+          <!-- NOTE: The `-ms-1` class is used to align with the `DashboardSidebarCollapse` button here. -->
+          <HomeDateRangePicker v-model="range" class="-ms-1" />
+
+          <HomePeriodSelect v-model="period" :range="range" />
+        </template>
+      </UDashboardToolbar>
+    </template>
+
+    <template #body>
+      <HomeStats :period="period" :range="range" />
+      <HomeChart :period="period" :range="range" />
+      <HomeSales :period="period" :range="range" />
+    </template>
+  </UDashboardPanel>
 </template>

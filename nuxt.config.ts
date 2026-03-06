@@ -1,31 +1,32 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2026-02-27",
-  devtools: { enabled: true },
-  pages: true,
   modules: [
-    "@nuxt/eslint",
-    "@nuxtjs/color-mode",
-    "@nuxt/devtools",
-    "@nuxt/test-utils",
-    "@nuxt/icon",
-    "@nuxt/hints",
-    "@nuxt/ui",
-    "@pinia/nuxt",
-    "@nuxt/fonts",
+    '@nuxt/eslint',
+    '@nuxt/ui',
+    '@vueuse/nuxt',
+    '@nuxt/image'
   ],
-  css: ["~/assets/css/main.css"],
-  ui: {
-    theme: {
-      colors: [
-        "primary",
-        "secondary",
-        "tertiary",
-        "info",
-        "success",
-        "warning",
-        "error",
-      ],
-    },
+
+  devtools: {
+    enabled: true
   },
-});
+
+  css: ['~/assets/css/main.css'],
+
+  routeRules: {
+    '/api/**': {
+      cors: true
+    }
+  },
+
+  compatibilityDate: '2024-07-11',
+
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
+  }
+})

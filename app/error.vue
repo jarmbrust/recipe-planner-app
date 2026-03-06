@@ -1,12 +1,24 @@
 <script setup lang="ts">
-import type { NuxtError } from "#app";
+import type { NuxtError } from '#app'
 
-const props = defineProps<{ error: NuxtError }>();
+defineProps<{
+  error: NuxtError
+}>()
+
+useSeoMeta({
+  title: 'Page not found',
+  description: 'We are sorry but this page could not be found.'
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  }
+})
 </script>
 
 <template>
-  <div>
-    <h1>{{ error.status }}</h1>
-    <NuxtLink to="/">Go back home</NuxtLink>
-  </div>
+  <UApp>
+    <UError :error="error" />
+  </UApp>
 </template>

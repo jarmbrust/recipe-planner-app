@@ -1,2 +1,10 @@
 overrides:
   serialize-javascript@<=7.0.2: '>=7.0.3'
+
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - '@tailwindcss/oxide'
+  - esbuild
+  - maplibre-gl
+  - unrs-resolver
+  - vue-demi
