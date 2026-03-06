@@ -3,7 +3,7 @@ import { DateFormatter, getLocalTimeZone, CalendarDate, today } from '@internati
 import type { Range } from '~/types'
 
 const df = new DateFormatter('en-US', {
-  dateStyle: "medium",
+  dateStyle: 'medium',
 })
 
 const selected = defineModel<Range>({ required: true })
