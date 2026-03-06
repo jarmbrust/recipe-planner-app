@@ -186,7 +186,8 @@ watch(() => statusFilter.value, (newVal) => {
 
   if (newVal === 'all') {
     statusColumn.setFilterValue(undefined)
-  } else {
+  }
+  else {
     statusColumn.setFilterValue(newVal)
   }
 })

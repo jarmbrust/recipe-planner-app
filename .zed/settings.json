@@ -9,7 +9,11 @@
   "lsp": {
     "eslint": {
       "settings": {
-        "configFile": "~/.nuxt/eslint.config.mjs",
+        "configFile": "./eslint.config.mjs",
+        "format": true,
+        "experimental": {
+          "useFlatConfig": true
+        }
       },
     },
     "tailwindcss-language-server": {

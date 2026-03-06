@@ -27,7 +27,7 @@ defineShortcuts({
     if (index === -1) {
       selectedMail.value = props.mails[0]
     }
- else if (index < props.mails.length - 1) {
+    else if (index < props.mails.length - 1) {
       selectedMail.value = props.mails[index + 1]
     }
   },
@@ -37,7 +37,7 @@ defineShortcuts({
     if (index === -1) {
       selectedMail.value = props.mails[props.mails.length - 1]
     }
- else if (index > 0) {
+    else if (index > 0) {
       selectedMail.value = props.mails[index - 1]
     }
   },

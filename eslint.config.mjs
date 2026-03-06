@@ -7,7 +7,10 @@ export default withNuxt({
     'vue/max-attributes-per-line': ['error', { singleline: 3 }],
     // Add stylistic rules here
     'comma-dangle': ['warn', 'always-multiline'],
-    'brace-style': ['error', '1tbs'],
     'quotes': ['warn', 'single'],
+    // Add more stylistic rules as needed
+    'indent': ['error', 2],
+    'semi': ['error', 'always'],
+    'brace-style': ['error', '1tbs'],
   },
 })

@@ -3,7 +3,7 @@ import { DateFormatter, getLocalTimeZone, CalendarDate, today } from '@internati
 import type { Range } from '~/types'
 
 const df = new DateFormatter('en-US', {
-  dateStyle: 'medium',
+  dateStyle: "medium",
 })
 
 const selected = defineModel<Range>({ required: true })
@@ -47,10 +47,10 @@ const isRangeSelected = (range: { days?: number, months?: number, years?: number
   if (range.days) {
     startDate = startDate.subtract({ days: range.days })
   }
- else if (range.months) {
+  else if (range.months) {
     startDate = startDate.subtract({ months: range.months })
   }
- else if (range.years) {
+  else if (range.years) {
     startDate = startDate.subtract({ years: range.years })
   }
 
@@ -67,10 +67,10 @@ const selectRange = (range: { days?: number, months?: number, years?: number }) 
   if (range.days) {
     startDate = startDate.subtract({ days: range.days })
   }
- else if (range.months) {
+  else if (range.months) {
     startDate = startDate.subtract({ months: range.months })
   }
- else if (range.years) {
+  else if (range.years) {
     startDate = startDate.subtract({ years: range.years })
   }
 
