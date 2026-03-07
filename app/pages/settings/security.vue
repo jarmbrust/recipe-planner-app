@@ -4,14 +4,14 @@ import type { FormError } from '@nuxt/ui'
 
 const passwordSchema = z.object({
   current: z.string().min(8, 'Must be at least 8 characters'),
-  new: z.string().min(8, 'Must be at least 8 characters')
+  new: z.string().min(8, 'Must be at least 8 characters'),
 })
 
 type PasswordSchema = z.output<typeof passwordSchema>
 
 const password = reactive<Partial<PasswordSchema>>({
   current: '',
-  new: ''
+  new: '',
 })
 
 const validate = (state: Partial<PasswordSchema>): FormError[] => {
@@ -60,7 +60,7 @@ const validate = (state: Partial<PasswordSchema>): FormError[] => {
   <UPageCard
     title="Account"
     description="No longer want to use our service? You can delete your account here. This action is not reversible. All information related to this account will be deleted permanently."
-    class="bg-gradient-to-tl from-error/10 from-5% to-default"
+    class="bg-linear-to-tl from-error/10 from-5% to-default"
   >
     <template #footer>
       <UButton label="Delete account" color="error" />
