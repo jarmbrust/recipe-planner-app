@@ -13,9 +13,11 @@ The intent in creating this application is to assist both my wife and I in plann
 - Add items to the list with quantities and measurements
 - Save and load grocery lists
 - Support for multiple users (login support)
+  - Group users by household
+  - Recipe temp save on side, for consideration
 
 ### Phase 2
-- Store recipes, and our rating for them.
+- Store recipes, and user rating for them.
 - Generate a shopping list based on the items in the list
     - list with checkboxes to be used at the grocery store
 
@@ -28,33 +30,15 @@ The intent in creating this application is to assist both my wife and I in plann
 - Profit??  (TBD)
 
 ---
----
----
-
-
-
-
 
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
-
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
+```
 # pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
 ## Development Server
@@ -62,17 +46,8 @@ bun install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
 # pnpm
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
 ## Production
@@ -80,33 +55,13 @@ bun run dev
 Build the application for production:
 
 ```bash
-# npm
-npm run build
-
 # pnpm
 pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
 Locally preview production build:
 
 ```bash
-# npm
-npm run preview
-
 # pnpm
 pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
